@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aportes de la química en el desarrollo de alimentos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../CSS/STYLE/QUEST2/style.css">
+    <link rel="stylesheet" type="text/css" href="../../CSS/FONTS/fonts.css">
+    <style>
+        :root{
+    /* COLORES */
+    --bg-body: #d9f6d9;
+    --bg-header: #d9f6d9;
+    --bg-main: hsl(100,42%,33%);
+    --bg-nav: hsl(100,35%,45%);
+    --bg-footer:#040;
+    --nav-a-color: #d0d0d0;
+    --h1-color: #e9ffe9;
+    --footer-h2-color: #a0c6a4;
+    --bg-international-recipes: hsl(100,40%,30%);
+    --color-conatainers: #dfd;
+    --bg-containers: #326938;
+
+    /* FONT-SIZE */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg-body);
+    font-family: quimica, Arial, Helvetica, sans-serif;
+}
+
+/*------ HEADER SECTION ------*/
+
+.header{
+    min-width: 100%;
+    min-height: 100dvh;
+    background: url("../../../html/quest2/img.jpg") center 1rem / cover no-repeat fixed;
+    padding-top: 8rem;
+    display: flex;
+}
+
+.header__nav{
+    min-width: 100%;
+    background-color: var(--bg-nav);
+    margin: 0 0 1rem 0;
+    position: fixed;
+    top: 0;
+    z-index: 50;
+}
+
+.header__nav__list{
+    list-style: none;
+}
+
+.header__nav > div{
+    min-width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: right;
+}
+
+.material-symbols-outlined{
+    color: var(--nav-a-color);
+    font-size: clamp(3.2rem,5vw,5.6rem);
+    user-select: none;
+    margin-right: 0.6rem;
+}
+
+.menu-checkbox, .header__nav__list{
+    display: none;
+}
+
+.header__nav:has(.menu-checkbox:checked) .header__nav__list{
+    display: block;
+}
+
+.header__nav:has(.menu-checkbox:checked) .header__nav__list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.header__nav__list__item > a{
+    color: var(--nav-a-color);
+    text-decoration: none;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+    letter-spacing: 0.2rem;
+}
+
+h1{
+    margin: auto;
+    color: var(--h1-color);
+    text-shadow: 0 0 1rem #020202;
+    font-size: clamp(2.5rem,3vw,5.2rem);
+    padding-bottom: 2rem;
+    text-align: center;
+    text-wrap: balance;
+}
+
+/*------ END HEADER SECTION ------*/
+
+
+/*------ MAIN SECTION ------*/
+
+.main{
+    background-color: var(--bg-main);
+    min-height: 100dvh;
+    padding-bottom: 15rem;
+    container-name: main;
+    container-type: inline-size;
+}
+
+.main__wrapper{
+    padding: 2rem;
+    padding-top: 8rem;
+}
+
+.element-img{
+    display: none;
+}
+
+.containers{
+    background-color: var(--bg-containers);
+    border-radius: .8rem;
+    box-shadow: 0 0 2rem #0009;
+    color: var(--color-conatainers);
+    max-width: clamp(37%,58%,70%);
+    view-timeline: --up block;
+    animation: boxs 1s linear both;
+    animation-timeline: --up;
+    animation-range: cover 20% cover 40%;
+}
+
+.containers h2{
+    padding: 1rem 0 1rem 1rem;
+    font-size: clamp(1.8rem, 2.2vw, 3.8rem);
+    text-wrap: balance;
+}
+
+.containers p {
+    padding: 2.8rem;
+    font-size: clamp(1.4rem, 2vw, 2.6rem);
+    text-wrap: pretty;
+}
+
+.main__wrapper__first_container{
+    margin-left: 40%;
+}
+
+.main__wrapper__second_container{
+    margin-left: 1%;
+    margin-top: 10%;
+}
+
+.main__wrapper__third_container{
+    margin-left: 40%;
+    margin-top: 10%;
+}
+
+.main__wrapper__fourth_container{
+    margin-left: 1%;
+    margin-top: 10%;
+}
+
+@keyframes boxs {
+    from{
+        transform: translateY(30rem);
+    }
+
+    to{
+        transform: translateY(0);
+    }
+}
+
+@media screen and (min-width: 800px){
+    .header__nav > div{
+        display: none;
+    }
+
+    .header__nav{
+        display: flex;
+        justify-content: center;
+    }
+
+    .header__nav__list{
+        display: block;
+        list-style: none;
+    }
+
+    .header__nav__list__item > a{
+        display: inline-block;
+        padding: 1.2rem;
+    }
+}
+
+@container main (min-width: 600px) {
+    .containers{
+        display: flex;
+        overflow: hidden;
+    }
+    .element-img{
+        display: block;
+        max-width: 40%;
+    }
+
+    .element-img img{
+        max-width: 100%;
+        min-height: 100%;
+    }
+    
+}
+    </style>
+</head>
+<body>
+     <!-- HEADER SECTION -->
+     
+     <header class="header" role="banner">
+        <nav class="header__nav nav" role="navigation" aria-label="Barra de navegación">
+            <div>
+                <label class="material-symbols-outlined" for="button">menu</label>
+                    <input type="checkbox" id="button" class="menu-checkbox">
+            </div>
+            <ul class="header__nav__list"> 
+                <li class="header__nav__list__item"><a href="../index.html" aria-label="Sección de principal de Food Book">Inicio</a></li>
+            </ul>
+        </nav>
+        <h1>¿Qué elemtos químicos forman a los macronutrientes?</h1>
+</header>
+
+    <!-- END HEADER SECTION -->
+
+    <!-- MAIN SECTION -->
+
+<main class="main">
+    <section class="main__wrapper">
+        <article class="main__wrapper__first_container containers">
+            <div class="element-img">
+                <img src="hidrogeno.jpg" alt="">
+            </div>
+            <div class="element-description">
+                <h2>1. Hidrógeno</h2>
+                <p>
+                    El hidrógeno es el primer elemento de la tabla periódica. Es el elemento químico más ligero que existe, su átomo está formado por un protón y un electrón y es estable en forma de molécula diatómica (H2). En condiciones normales se encuentra en estado gaseoso, y es insípido, incoloro e inodoro.
+                </p>
+            </div>
+        </article>
+        <article class="main__wrapper__second_container containers">
+            <div class="element-img">
+                <img src="oxigeno.jpg" alt="">
+            </div>
+            <div class="element-description">
+                <h2>2. Oxigeno</h2>
+                <p>
+                    El oxígeno es un elemento químico de la Tabla Periódica que se representa con el símbolo O. Es el elemento más abundante en la Tierra y el más abundante del universo, después del helio (He) y el hidrógeno (H). Tiene número atómico 8 y masa atómica 15.9994 uma.
+                </p>
+            </div>
+        </article>
+        <article class="main__wrapper__third_container containers">
+            <div class="element-img">
+                <img src="nitrogeno.jpg" alt="">
+            </div>
+            <div class="element-description">
+                <h2>3. Nitrógeno</h2>
+                <p>
+                    El nitrógeno es un elemento químico de número atómico 7, lo que significa que cada átomo de Nitrógeno cuenta con 7 protones en su núcleo atómico. Se representa con el símbolo N y se encuentra en el grupo 15 y el periodo 2 de la tabla periódica, por lo que pertenece al grupo de los no metales.
+                </p>
+            </div>
+        </article>
+    </section>
+</main>
+
+<!-- END HEADER SECTION -->
+</body>
+</html>

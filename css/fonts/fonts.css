@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'quimica';
+    src: url(Lato/Lato-Light.ttf) format("truetype");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'quimica';
+    src: url(Lato/Lato-Regular.ttf) format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'quimica';
+    src: url(Lato/Lato-Bold.ttf) format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'quimica';
+    src: url(Lato/Lato-Black.ttf) format("truetype");
+    font-weight: 800;
+}
